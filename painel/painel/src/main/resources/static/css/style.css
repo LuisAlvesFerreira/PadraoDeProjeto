@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary-900: #241a5e;
+    --primary-700: #4c3fb8;
+    --primary-600: #5b4fd6;
+    --primary-500: #6c5ce7;
+    --primary-100: #efecfd;
+    --primary-50:  #f7f6ff;
+
+    --accent-600: #d68910;
+    --accent-500: #f5a623;
+    --accent-400: #ffc857;
+
+    --bg: #f5f6fb;
+    --surface: #ffffff;
+    --text: #241f3d;
+    --text-muted: #8a8398;
+
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --shadow-soft: 0 12px 30px -10px rgba(76, 63, 184, .28);
+    --shadow-card: 0 4px 22px rgba(36, 31, 61, .07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+h1, h2, h3, h4, h5, .brand, .ticket-number {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(165deg, var(--primary-900) 0%, var(--primary-700) 55%, var(--primary-500) 100%);
+    box-shadow: var(--shadow-soft);
+    padding: 28px 20px;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,87,.18), transparent 70%);
+    top: -80px; right: -100px;
+}
+
+.sidebar .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 34px;
+}
+
+.brand-icon {
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+    color: var(--primary-900);
+    font-size: 1.1rem;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,.72);
+    padding: 11px 14px;
+    border-radius: var(--radius-md);
+    margin-bottom: 6px;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all .18s ease;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,.08);
+    color: #fff;
+}
+
+.sidebar .active-link {
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    border-left: 3px solid var(--accent-400);
+    font-weight: 600;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+    padding: 18px 6px;
+    border-bottom: 1px solid #ece9fb;
+    margin-bottom: 28px;
+}
+
+.topbar h4 { font-weight: 700; margin: 0; }
+
+.clock-badge {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ===== HERO CARD (painel do atendente) ===== */
+.card-hero {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-hero .card-top-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+}
+
+.card-hero .card-body-custom { padding: 48px 40px; }
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.ticket-number {
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    background: linear-gradient(90deg, var(--primary-600), var(--accent-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 6px 0 28px;
+}
+
+/* ===== BOTÕES DE AÇÃO ===== */
+.action-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.btn-gen {
+    border: none;
+    padding: 15px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .15s ease, box-shadow .15s ease;
+    cursor: pointer;
+}
+
+.btn-gen:hover { transform: translateY(-3px); }
+
+.btn-normal {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+    color: #fff;
+    box-shadow: 0 10px 20px -8px rgba(108,92,231,.55);
+}
+
+.btn-priority {
+    background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+    color: var(--primary-900);
+    box-shadow: 0 10px 20px -8px rgba(245,166,35,.55);
+}
+
+/* ===== HISTÓRICO ===== */
+.history-panel {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 10px 8px;
+}
+
+.history-title {
+    font-weight: 700;
+    padding: 14px 20px 6px;
+    font-size: 1rem;
+}
+
+.ticket-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-radius: var(--radius-md);
+    transition: background .15s ease;
+}
+
+.ticket-row:hover { background: var(--primary-50); }
+
+.ticket-code {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-right: 10px;
+}
+
+.badge-normal, .badge-priority {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.badge-normal { background: var(--primary-100); color: var(--primary-700); }
+.badge-priority {
+    background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+    color: var(--primary-900);
+}
+
+.ticket-time {
+    color: var(--text-muted);
+    font-size: .85rem;
+}
+
+/* ===== TELA DISPLAY (fila de espera) ===== */
+.display-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-900), var(--primary-600) 55%, var(--primary-500));
+    background-size: 200% 200%;
+    animation: panBg 14s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes panBg {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.display-bg::before, .display-bg::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.display-bg::before {
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(255,200,87,.25), transparent 70%);
+    top: -100px; left: -100px;
+}
+
+.display-bg::after {
+    width: 460px; height: 460px;
+    background: radial-gradient(circle, rgba(255,255,255,.10), transparent 70%);
+    bottom: -150px; right: -120px;
+}
+
+.display-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.12);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 30px;
+}
+
+.live-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 rgba(74,222,128,.6);
+    animation: pulseDot 1.6s infinite;
+}
+
+@keyframes pulseDot {
+    0%   { box-shadow: 0 0 0 0 rgba(74,222,128,.55); }
+    70%  { box-shadow: 0 0 0 12px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+
+.display-label {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,.75);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.display-number {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(5rem, 14vw, 10rem);
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 50px rgba(255,200,87,.55);
+    animation: popIn .5s ease;
+    margin: 10px 0 20px;
+}
+
+@keyframes popIn {
+    from { transform: scale(.85); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.display-badge {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 22px;
+    border-radius: 999px;
+}
+
+.display-badge.normal { background: rgba(255,255,255,.14); color: #fff; }
+.display-badge.prioritaria {
+    background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+    color: var(--primary-900);
+}
+
+.display-footer {
+    position: absolute;
+    bottom: 26px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    color: rgba(255,255,255,.55);
+    font-size: .85rem;
+    z-index: 2;
+}
+
+/* ===== responsivo ===== */
+@media (max-width: 768px) {
+    .sidebar { width: 100%; min-height: auto; }
+    .d-flex.main-layout { flex-direction: column; }
+    .action-buttons { flex-direction: column; }
+    .btn-gen { width: 100%; justify-content: center; }
+}

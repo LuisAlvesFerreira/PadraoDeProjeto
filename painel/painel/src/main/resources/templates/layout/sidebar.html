@@ -1,0 +1,13 @@
+<div th:fragment="sidebar(active)" class="sidebar">
+    <div class="brand">
+        <div class="brand-icon"><i class="bi bi-ticket-perforated-fill"></i></div>
+        <span>PainelSenhas</span>
+    </div>
+
+    <a href="/atendente" class="nav-link" th:classappend="${active == 'painel'} ? 'active-link'">
+        <i class="bi bi-grid-1x2-fill"></i> Painel Senha
+    </a>
+    <a href="/display" class="nav-link" th:classappend="${active == 'display'} ? 'active-link'">
+        <i class="bi bi-display-fill"></i> Display
+    </a>
+</div>
