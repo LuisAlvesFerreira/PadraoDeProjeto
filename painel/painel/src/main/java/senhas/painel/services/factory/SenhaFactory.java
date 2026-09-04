@@ -2,11 +2,13 @@ package senhas.painel.services.factory;
 
 import senhas.painel.model.Senha;
 
-public abstract class SenhaFactory {
+public interface SenhaFactory {
 
-    public abstract Senha criarSenha();
+    // Factory Method: cada implementação decide como construir a senha
+    Senha criarSenha();
 
-    protected String gerarNumero() {
+    // Metodo default: lógica compartilhada, sem precisar de classe abstrata
+    default String gerarNumero() {
         long ticks = System.currentTimeMillis();
         String ticksStr = String.valueOf(ticks);
         return ticksStr.substring(ticksStr.length() - 4);
