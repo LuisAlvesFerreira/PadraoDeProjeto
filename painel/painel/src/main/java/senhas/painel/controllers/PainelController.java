@@ -1,7 +1,7 @@
 package senhas.painel.controllers;
 
 import senhas.painel.model.TipoSenha;
-import senhas.painel.services.QueueService;
+import senhas.painel.services.IQueueService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class PainelController {
 
-    private final QueueService queueService;
+    private final IQueueService queueService;
 
-    public PainelController(QueueService queueService) {
+    public PainelController(IQueueService queueService) {
         this.queueService = queueService;
     }
 

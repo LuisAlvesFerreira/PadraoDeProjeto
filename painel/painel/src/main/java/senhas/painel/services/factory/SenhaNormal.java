@@ -2,10 +2,9 @@ package senhas.painel.services.factory;
 
 import senhas.painel.model.Senha;
 import senhas.painel.model.TipoSenha;
-
 import java.time.LocalDateTime;
 
-public class SenhaNormal extends SenhaFactory {
+public class SenhaNormal implements SenhaFactory {
 
     @Override
     public Senha criarSenha() {

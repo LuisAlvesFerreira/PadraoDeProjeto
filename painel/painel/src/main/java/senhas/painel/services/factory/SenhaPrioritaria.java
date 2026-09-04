@@ -4,7 +4,7 @@ import senhas.painel.model.Senha;
 import senhas.painel.model.TipoSenha;
 import java.time.LocalDateTime;
 
-public class SenhaPrioritaria extends SenhaFactory {
+public class SenhaPrioritaria implements SenhaFactory {
 
     @Override
     public Senha criarSenha() {
