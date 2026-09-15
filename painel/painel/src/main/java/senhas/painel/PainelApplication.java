@@ -12,6 +12,7 @@ public class PainelApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PainelApplication.class, args);
+        
     }
 
     // O Bean é declarado com o tipo da interface — é assim que o Spring
@@ -20,5 +21,6 @@ public class PainelApplication {
     @Bean
     public IQueueService queueService(SenhaRepository senhaRepository) {
         return QueueServiceImpl.getInstance(senhaRepository);
+        
     }
 }
