@@ -1,0 +1,37 @@
+
+*.class
+*.jar
+*.war
+*.ear
+
+# Diretorio maven
+target/
+
+# Configurações IDE
+.idea/
+*.iml
+*.iws
+
+
+.settings/
+.classpath
+.project
+.vscode/
+
+# Bancos H2
+*.trace.db
+/data/
+/painel/data/
+
+# Logs e relatórios de erro do Java
+*.log
+hs_err_pid*
+
+# Arquivos de sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Variáveis de ambiente e segredos
+.env
+*.env
